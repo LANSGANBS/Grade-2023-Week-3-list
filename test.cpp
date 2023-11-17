@@ -16,33 +16,30 @@ const ll MAX_LL = 0x3f3f3f3f3f3f3f3f;
 const ll CF = 2e5 + 9;
 const ll mod = 1e9 + 7;
 
-void solve()
+string getOutput(int t)
 {
-    string s;
-    cin >> s;
-    bool flag = 1;
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (s[i] != s[s.size() - i - 1])
-        {
-            flag = 0;
-            break;
-        }
-    }
-    if (flag)
-        cout << "yes" << endl;
-    else
-        cout << "no" << endl;
+    if (t > 0)
+        return "1";
+    else if (t == 0)
+        return "0.5";
+    else if (t < 0)
+        return "0";
+}
+
+void solve(int t)
+{
+    cout << getOutput(t) << endl;
 }
 
 int main()
 {
-    buff;
     int t = 1;
     cin >> t;
     while (t--)
     {
-        solve();
+        int input;
+        cin >> input;
+        solve(input);
     }
     return 0;
 }

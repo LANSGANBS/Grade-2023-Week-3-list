@@ -18,28 +18,29 @@ const ll mod = 1e9 + 7;
 
 void solve()
 {
-    string s;
-    cin >> s;
-    bool flag = 1;
-    for (int i = 0; i < s.size(); ++i)
+    int a, x;
+    while (cin >> a >> x)
     {
-        if (s[i] != s[s.size() - i - 1])
-        {
-            flag = 0;
+        int ans = 1;
+        if (a == 0 && x == 0)
             break;
+        else
+        {
+            for (int i = 0; i < x; i++)
+            {
+                ans *= a;
+                ans %= 1000;
+            }
+            cout << ans << endl;
         }
     }
-    if (flag)
-        cout << "yes" << endl;
-    else
-        cout << "no" << endl;
 }
 
 int main()
 {
     buff;
     int t = 1;
-    cin >> t;
+    //	cin >> t;
     while (t--)
     {
         solve();

@@ -15,34 +15,24 @@ const ll MAX_INT = 0x3f3f3f3f;
 const ll MAX_LL = 0x3f3f3f3f3f3f3f3f;
 const ll CF = 2e5 + 9;
 const ll mod = 1e9 + 7;
-
-void solve()
-{
-    string s;
-    cin >> s;
-    bool flag = 1;
-    for (int i = 0; i < s.size(); ++i)
-    {
-        if (s[i] != s[s.size() - i - 1])
-        {
-            flag = 0;
-            break;
-        }
-    }
-    if (flag)
-        cout << "yes" << endl;
-    else
-        cout << "no" << endl;
-}
+const int N = 37;
+int arr[N][N];
 
 int main()
 {
-    buff;
-    int t = 1;
-    cin >> t;
-    while (t--)
+    int a;
+    while (cin >> a)
     {
-        solve();
+        arr[0][0] = {1};
+        {
+            for (int i = 0; i <= a; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    cout << arr[i - 1][j - 1] + arr[i - 1][j] << " ";
+                }
+                cout << endl;
+            }
+        }
     }
-    return 0;
 }
