@@ -15,31 +15,33 @@ const ll MAX_INT = 0x3f3f3f3f;
 const ll MAX_LL = 0x3f3f3f3f3f3f3f3f;
 const ll CF = 2e5 + 9;
 const ll mod = 1e9 + 7;
+vll vec;
 
-string getOutput(int t)
+void solve()
 {
-    if (t > 0)
-        return "1";
-    else if (t == 0)
-        return "0.5";
-    else if (t < 0)
-        return "0";
-}
-
-void solve(int t)
-{
-    cout << getOutput(t) << endl;
+    int n, x;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        vec.push_back(x);
+    }
+    sort(vec.begin(), vec.end());
+    for (int i = 0; i < n - 1; i++)
+    {
+        cout << vec[i] << " ";
+    }
+    cout << vec[n - 1] << endl;
 }
 
 int main()
 {
+    buff;
     int t = 1;
-    cin >> t;
+    //	cin >> t;
     while (t--)
     {
-        int input;
-        cin >> input;
-        solve(input);
+        solve();
     }
     return 0;
 }
