@@ -7,35 +7,37 @@
 #pragma GCC optimize(3)
 */
 using namespace std;
-typedef long long ll;
-typedef pair<ll, ll> pll;
-typedef vector<ll> vll;
-typedef vector<pair<ll, ll>> vpll;
-const ll MAX_INT = 0x3f3f3f3f;
-const ll MAX_LL = 0x3f3f3f3f3f3f3f3f;
-const ll CF = 2e5 + 9;
-const ll mod = 1e9 + 7;
-vll vec;
+#define ll long long
+#define int ll
+int name, demo, math, english;
+
+struct Student
+{
+    string name;
+    int programmingScore;
+    int mathScore;
+    int englishScore;
+};
 
 void solve()
 {
-    int n, x;
+    int n;
     cin >> n;
-    for (int i = 0; i < n; i++)
+    Student students[n];
+    for (int i = 0; i < n; ++i)
     {
-        cin >> x;
-        vec.push_back(x);
+        cin >> students[i].name >> students[i].programmingScore >> students[i].mathScore >> students[i].englishScore;
     }
-    sort(vec.begin(), vec.end());
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; ++i)
     {
-        cout << vec[i] << " ";
+        int totalScore = students[i].programmingScore + students[i].mathScore + students[i].englishScore;
+        cout << students[i].name << " " << totalScore << endl;
     }
-    cout << vec[n - 1] << endl;
 }
 
-int main()
+signed main()
 {
+    // setlocale(LC_ALL, "");
     buff;
     int t = 1;
     //	cin >> t;
